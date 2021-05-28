@@ -21,3 +21,23 @@ function gradingStudents(grades) {
    
    return answerArr;
 }
+
+// Minimum Waiting Time AlgoExpert
+
+function minimumWaitingTime(queries) {
+    let orderedQueryArr = queries.sort(function(a, b) {
+                          return a - b;
+              });
+      console.log(orderedQueryArr);
+      let minWaitTime = 0;
+      for (let i = 0; i < queries.length - 1; i++) {
+          for (let j = 0; j <= i; j++) {
+              minWaitTime += orderedQueryArr[j];
+              console.log(orderedQueryArr[j])
+          }
+          
+              
+          }
+      
+      return minWaitTime;
+      }
