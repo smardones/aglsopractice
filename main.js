@@ -41,3 +41,20 @@ function minimumWaitingTime(queries) {
       
       return minWaitTime;
       }
+
+      
+
+      function getTotalX(a, b) {
+        let finalCount = 0;
+        
+        for (let x = 0; x <= 100; x++) {
+            if (a.every(element => x % element === 0)) {
+                if (b.every(element => element % x === 0)) {
+                    finalCount++;
+                }
+            }
+        }
+        
+        return finalCount;
+    
+    }
