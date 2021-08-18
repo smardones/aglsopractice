@@ -58,3 +58,22 @@ function minimumWaitingTime(queries) {
         return finalCount;
     
     }
+
+// Subarray Division - Hackerrank
+
+function birthday(s, d, m) {
+    let solutionCount = 0;
+    
+    for (let i=0; i<s.length; i++) {
+        let subArr = s.slice(i, i + m);
+        
+        let testSum = subArr.reduce((accSum, currentValue) => accSum + currentValue) === d          
+        if (testSum) {
+            solutionCount++;
+        }
+        }
+    
+    
+    return solutionCount;
+    
+}
