@@ -77,3 +77,29 @@ function birthday(s, d, m) {
     return solutionCount;
     
 }
+
+// Migratory Birds - Hackerrank
+
+function migratoryBirds(arr) {
+    let currentCount = 1;
+    let highestCount = 1;
+    let mostCommonBird;
+    let sortedArr = arr.sort(function(a,b) {return a-b})
+    
+    for (let i=0; i<sortedArr.length; i++) {
+        if (i===0) {
+            mostCommonBird = sortedArr[i];
+        } else if (sortedArr[i] === sortedArr[i-1] && currentCount === highestCount) {
+            currentCount++;
+            highestCount++;
+            mostCommonBird = sortedArr[i];
+        } else if (sortedArr[i] === sortedArr[i-1] && currentCount < highestCount) {
+            currentCount++;
+        } else if (sortedArr[i] !== sortedArr[i-1]) {
+            currentCount = 1;
+        }
+    }
+    
+    return mostCommonBird;
+    
+}
