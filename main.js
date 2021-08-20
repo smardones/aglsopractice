@@ -103,3 +103,17 @@ function migratoryBirds(arr) {
     return mostCommonBird;
     
 }
+
+// Min Max Sum - Hackerrank
+
+function miniMaxSum(arr) {
+    let min, max;
+    let sortedArr = arr.sort((a, b) => {return a-b});
+    let minArr = sortedArr.slice(0, 4);
+    let maxArr = sortedArr.slice(1);
+    
+    min = minArr.reduce((accValue, currValue) => accValue + currValue);
+    max = maxArr.reduce((accValue, currValue) => accValue + currValue);
+    
+    console.log(min + " " + max);
+}
