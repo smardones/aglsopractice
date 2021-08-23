@@ -133,3 +133,7 @@ function divisibleSumPairs(n, k, ar) {
     }
     return pairs;
 }
+
+// Facotrials - Hackerrank
+
+// Clicked out of the page and lost my code
