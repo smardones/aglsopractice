@@ -137,3 +137,29 @@ function divisibleSumPairs(n, k, ar) {
 // Facotrials - Hackerrank
 
 // Clicked out of the page and lost my code
+
+// Electroni Shop - Hackerrank
+
+function getMoneySpent(keyboards, drives, b) {
+    let highestTotal = 0;
+    
+    for (let i = 0; i < keyboards.length; i++) {
+        drives.forEach((drive) => {
+            let testTotal = drive + keyboards[i];
+            
+            if (testTotal > highestTotal && testTotal <= b) {
+                highestTotal = testTotal
+                console.log(highestTotal);
+            }
+        })
+    }
+    
+    if (highestTotal) {
+        return highestTotal;
+    } 
+    
+    return -1;
+    
+    
+
+}
