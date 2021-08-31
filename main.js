@@ -163,3 +163,19 @@ function getMoneySpent(keyboards, drives, b) {
     
 
 }
+
+// Cats and a Mouse - Hackerrank
+
+function catAndMouse(x, y, z) {
+    let catADist = Math.abs(x - z);
+    let catBDist = Math.abs(y - z);
+    
+    if (catADist < catBDist) {
+        return "Cat A";
+    } else if (catADist > catBDist) {
+        return "Cat B"
+    }
+    
+    return "Mouse C";
+
+}
