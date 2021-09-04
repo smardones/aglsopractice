@@ -183,3 +183,23 @@ function catAndMouse(x, y, z) {
 // Breaking the Records
 
 //Forgot to save 
+
+// Counting Valleys
+
+function countingValleys(steps, path) {
+    let valleyCount = 0;
+    let location = 0;
+    
+    for(let i = 0; i < steps; i++) {
+        if(location === -1 && path[i] === 'U') {
+            valleyCount++;
+            location++;
+        } else if (path[i] === "U") {
+            location++;
+        } else if (path[i] === "D") {
+            location--;
+        }
+    }
+    
+    return valleyCount;
+}
