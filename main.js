@@ -203,3 +203,20 @@ function countingValleys(steps, path) {
     
     return valleyCount;
 }
+
+// Sales by Match
+
+function sockMerchant(n, ar) {
+    let pairCount = 0;
+    let sortedArr = ar.sort((a, b) => a-b);
+    sortedArr.forEach((sock, index) => {
+        if (sock === sortedArr[index + 1]) {
+            pairCount++;
+            sortedArr.splice(index + 1, 1);
+        }
+        
+    })
+    
+    return pairCount;
+    
+}
