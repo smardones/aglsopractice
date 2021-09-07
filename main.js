@@ -274,3 +274,19 @@ function getNthFib(n) {
           return seqNum;
       }
   }
+
+  // Palindrome Check - AlgoExpert
+
+  function isPalindrome(string) {
+  
+	let rstring = "";
+	
+	for(let i = string.length -1; i > -1; i--) {
+		rstring += string[i];
+	}
+	
+	console.log(string);
+	console.log(rstring);
+	return (string === rstring);
+
+}
