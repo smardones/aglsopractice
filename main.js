@@ -245,3 +245,32 @@ function findClosestHelper(tree, target, closest) {
 	}
 	
 }
+
+// Fabonaci Sequence - AlgoExpert
+
+function getNthFib(n) {
+    let first = 0;
+      let second = 1;
+      let iterator = 3;
+      
+      if (n === 1) {
+          return 0;
+      } else if (n === 2) {
+          return 1;
+      }
+      
+      return fibHelper(n, first, second, iterator);
+  }
+  
+  function fibHelper(n, first, second, iterator) {
+      let seqNum = first + second;
+      
+      if (iterator < n) {
+          first = second;
+          second = seqNum;
+          iterator++;
+          return fibHelper(n, first, second, iterator);
+      } else {
+          return seqNum;
+      }
+  }
