@@ -290,3 +290,23 @@ function getNthFib(n) {
 	return (string === rstring);
 
 }
+
+// Tandem Bike - AlgoExpert
+
+function tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest) {
+	let speed = 0;
+  let sortedRed = redShirtSpeeds.sort((a, b) => {return a - b});
+	let sortedBlue;
+	if (fastest) {
+		sortedBlue = blueShirtSpeeds.sort((a, b) => {return b - a});
+	} else {
+		sortedBlue = blueShirtSpeeds.sort((a, b) => {return a - b});
+	}
+	
+	for (let i = 0; i < sortedRed.length; i++) {
+		speed += Math.max(sortedRed[i], sortedBlue[i]);
+	}
+	
+	return speed;
+  
+}
