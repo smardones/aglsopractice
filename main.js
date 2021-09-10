@@ -310,3 +310,58 @@ function tandemBicycle(redShirtSpeeds, blueShirtSpeeds, fastest) {
 	return speed;
   
 }
+
+// Constructing Binary Search Tree
+
+insert(value) {
+    let node = this;
+		
+		
+		if (node === undefined) {
+			node = new BST(value);
+			return;
+		} 
+		const traverseTree = function(node) {
+	  	if (value < node.value) {
+				if (node.left == null) {
+					node.left = new BST(value);
+					return;
+				} else {
+					return traverseTree(node.left);
+				}
+			} 
+			if (value >= node.value) {
+				if (node.right == null) {
+					node.right = new BST(value);
+					return;
+				} else {
+					return traverseTree(node.right);
+				}
+			}
+		}
+		traverseTree(node);
+	}
+
+  contains(value) {
+		if (value === this.value) {
+			return true;
+		} 
+		if (value < this.value) {
+			if (value === this.left) {
+				return true;
+			} else if (this.left == null) {
+				return false;
+			} else {
+				return this.left.contains(value);
+			}
+		}
+		if (value > this.value) {
+			if (value === this.right) {
+				return true;
+			} else if (this.right == null) {
+				return false;
+			} else {
+				return this.right.contains(value)
+			}
+		}
+  }
