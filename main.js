@@ -411,3 +411,23 @@ return this;
         }
         return currentNode.value;
     }
+
+
+    function threeNumberSum(array, targetSum) {
+        let answerArr = [];
+          let sortedArr = array.sort((a,b) => {return a-b});
+          
+          console.log(sortedArr);
+          
+          for (let i = 0; i < sortedArr.length; i++) {
+              for (let j = i + 1; j < sortedArr.length; j++) {
+                  for (let k = j + 1; k < sortedArr.length; k++) {
+                      if (sortedArr[i] + sortedArr[j] + sortedArr[k] === targetSum) {
+                          answerArr.push([sortedArr[i], sortedArr[j], sortedArr[k]])
+                      }
+                  }
+              }
+          }
+          
+          return answerArr;
+      }
