@@ -431,3 +431,27 @@ return this;
           
           return answerArr;
       }
+
+      function threeNumberSum(array, targetSum) {
+        let answerArr = [];
+          let sArr = array.sort((a,b) => {return a-b});
+          console.log(sArr)
+          for (let i = 0; i < sArr.length; i++) {
+              let j = i + 1;
+              let k = sArr.length - 1;
+               while (j < k) {
+                   if ((sArr[i] + sArr[j] + sArr[k]) === targetSum) {
+                       answerArr.push([sArr[i], sArr[j], sArr[k]]);
+                       j++;
+                       k--;
+                   } else if ((sArr[i] + sArr[j] + sArr[k]) < targetSum) {
+                       j++;
+                       
+                   } else if ((sArr[i] + sArr[j] + sArr[k]) > targetSum) {
+                       k--;
+                      
+                   }
+               }
+          }
+          return answerArr;
+      }
