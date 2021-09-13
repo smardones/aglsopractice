@@ -455,3 +455,19 @@ return this;
           }
           return answerArr;
       }
+
+      function caesarCipherEncryptor(string, key) {
+        let answerString = '';
+          
+          for (let i = 0; i < string.length ; i++) {
+              let newCharCode = string.charCodeAt(i) + key;
+              while (newCharCode > 122) {
+                  newCharCode = 96 + (newCharCode - 122)
+              }
+              
+              let newChar = String.fromCharCode(newCharCode);
+              
+              answerString += newChar;
+          }
+          return answerString;
+      }
