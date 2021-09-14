@@ -471,3 +471,21 @@ return this;
           }
           return answerString;
       }
+
+      function removeDuplicatesFromLinkedList(linkedList) {
+        let currentNode = linkedList;
+          while(currentNode.next !== null) {
+              let nextUniqueNode = currentNode.next;
+              if (currentNode.value === nextUniqueNode.value) {
+                  currentNode.next = nextUniqueNode.next;
+                  nextUniqueNode = nextUniqueNode.next;
+              } else {
+                  currentNode = nextUniqueNode;
+                  nextUniqueNode = nextUniqueNode.next;
+              }
+          }
+          
+          
+          return linkedList;
+        
+      }
