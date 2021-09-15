@@ -500,3 +500,14 @@ return this;
         
         return array;
     }
+
+    function validateBst(tree, min = -Infinity, max = Infinity) {
+	
+        if (tree === null) return true;
+        if (tree.value < min || tree.value >= max) return false;
+        const isLeftValid = validateBst(tree.left, min, tree.value);
+        const isRightValid = validateBst(tree.right, tree.value, max);
+        
+        return isLeftValid && isRightValid;
+        
+    }
