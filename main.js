@@ -489,3 +489,14 @@ return this;
           return linkedList;
         
       }
+
+      function moveElementToEnd(array, toMove) {
+        array.forEach((element, index) => {
+            if (element !== toMove) {
+                array.splice(index, 1);
+                array.unshift(element);
+            }
+        })
+        
+        return array;
+    }
