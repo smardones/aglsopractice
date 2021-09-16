@@ -524,3 +524,24 @@ return this;
             }
             return array;
       }
+
+      function classPhotos(redShirtHeights, blueShirtHeights) {
+        let sortedRed = redShirtHeights.sort((a,b) => {return a-b});
+        let sortedBlue = blueShirtHeights.sort((a,b) => {return a-b});
+           return classPhotoHelper(sortedRed, sortedBlue);
+      }
+      
+      function classPhotoHelper(red, blue) {
+          
+          let backrowRed = red.every((student, index) => student > blue[index]);
+          let backrowBlue = blue.every((student, index) => student > red[index]);
+          
+          
+          console.log(backrowBlue);
+          if (backrowRed == true || backrowBlue == true) {
+              return true;
+          }
+          
+          return false;
+          
+      }
