@@ -511,3 +511,16 @@ return this;
         return isLeftValid && isRightValid;
         
     }
+
+    depthFirstSearch(array) {
+        array.push(this.name);
+            let children = this.children;
+            
+            if (this.children.length > 0) {
+                for (let i = 0; i <= children.length - 1; i++) {
+                    children[i].depthFirstSearch(array);
+                }
+                return array;
+            }
+            return array;
+      }
