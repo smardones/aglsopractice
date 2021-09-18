@@ -545,3 +545,8 @@ return this;
           return false;
           
       }
+
+      function isMonotonic(array) {
+	
+        for (let i = 0; array)
+      }
