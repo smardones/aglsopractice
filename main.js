@@ -548,5 +548,23 @@ return this;
 
       function isMonotonic(array) {
 	
-        for (let i = 0; array)
-      }
+        if (array.length > 1) {
+            if (array[0] >= array[array.length - 1]) {
+            for (let i = 0; i <= array.length - 2; i++) {
+                let next = i + 1;
+                if (!(array[i] >= array[next])) {
+                    return false;
+                }
+            }
+            } else if (array[0] < array[array.length - 1]) {
+                for (let i = 0; i <= array.length - 2; i++) {
+                    let next = i + 1;
+                    if (!(array[i] <= array[next])) {
+                        return false;
+                    }
+                }
+        }
+        }
+    
+        return true;
+    }
