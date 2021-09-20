@@ -588,4 +588,20 @@ return this;
       return answerPair;
       
       }
+
+
+      function arrayOfProducts(array) {
+        let answer = [];
+          let product = 1;
+          array.forEach((element, index) => {
+              
+              let newArr = array.filter((num, filterInx) => filterInx !== index);
+              console.log(newArr);
+              
+              let totalProduct = newArr.reduce((product, ele) => product * ele);
+              
+              answer.push(totalProduct);
+          })
+          return answer;
+      }
       
