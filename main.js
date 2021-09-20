@@ -568,3 +568,24 @@ return this;
     
         return true;
     }
+
+    function smallestDifference(arrayOne, arrayTwo) {
+        let smallestDiff;
+      let answerPair = [];
+      for (let i = 0; i <= arrayOne.length - 1; i++) {
+      for (let j = 0; j <= arrayTwo.length - 1; j++) {
+      let currentDiff = Math.abs(arrayOne[i] - arrayTwo[j]);
+      if (i == 0 && j == 0) {
+      smallestDiff = currentDiff;
+      answerPair = [arrayOne[i], arrayTwo[j]];
+      } else if (currentDiff < smallestDiff) {
+      smallestDiff = currentDiff;
+      answerPair = [arrayOne[i], arrayTwo[j]];
+      console.log(answerPair);
+      }
+      }
+      }
+      return answerPair;
+      
+      }
+      
