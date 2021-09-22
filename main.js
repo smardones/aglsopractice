@@ -604,4 +604,17 @@ return this;
           })
           return answer;
       }
+
+      function firstDuplicateValue(array) {
+        let testArr = [];
+          for (let i = 0; i <= array.length - 1; i++) {
+        if (!testArr.includes(array[i])) {
+        testArr.push(array[i]);
+        } else {
+        return array[i];
+        }
+        }
+        
+          return -1;
+        }
       
