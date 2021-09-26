@@ -605,51 +605,39 @@ return this;
           return answer;
       }
 
-      function firstDuplicateValue(array) {
-        let testArr = [];
-          for (let i = 0; i <= array.length - 1; i++) {
-        if (!testArr.includes(array[i])) {
-        testArr.push(array[i]);
-        } else {
-        return array[i];
-        }
+      function spiralTraverse(array) {
+        let firstRow = 0;
+        let lastRow = array.length - 1;
+        let firstCol = 0;
+        let lastCol = array[0].length - 1
+        let answerArr = [];
+        
+        while (firstRow <= lastRow && firstCol <= lastCol) {
+            for (let i = firstCol; i <= lastCol; i++) {
+            answerArr.push(array[firstRow][i]);
         }
         
-          return -1;
-        }
-
-        function spiralTraverse(array) {
-            return traversePer(array);
+        for (let i = firstRow + 1; i <= lastRow; i++) {
+            answerArr.push(array[i][lastCol])
         }
         
-        function traversePer(array) {
-            let firstRow = 0;
-            let lastRow = array.length - 1;
-            let firstCol = 0;
-            let lastCol = array[0].length - 1
-            let answerArr = [];
-            
-                for (let i = firstCol; i <= lastCol; i++) {
-                answerArr.push(array[firstRow][i]);
-            }
+        for (let i = lastCol - 1; i >= firstCol; i--) {
+            if (firstRow === lastRow) break;
+            answerArr.push(array[lastRow][i]);
+        }
+        
+        for (let i = lastRow -1; i > firstRow; i--) {
+            if (firstCol === lastCol) break;
+            answerArr.push(array[i][firstCol])
+        }
+        
             firstRow++;
-            for (let i = firstRow; i <= lastRow; i++) {
-                answerArr.push(array[i][lastCol])
-            }
-            lastCol--;
-            for (let i = lastCol; i >= firstCol; i--) {
-                answerArr.push(array[lastRow][i]);
-            }
             lastRow--;
-            for (let i = lastRow; i >= firstRow; i--) {
-                answerArr.push(array[i][firstCol])
-            }
             firstCol++;
-            if (firstRow !== lastRow || firstCol !== lastCol) {
-                return traversePer(array)
-            } 
-            
-            return answerArr;
-            
+            lastCol--;
+        
         }
+        
+        return answerArr;
+    }
       
