@@ -617,4 +617,39 @@ return this;
         
           return -1;
         }
+
+        function spiralTraverse(array) {
+            return traversePer(array);
+        }
+        
+        function traversePer(array) {
+            let firstRow = 0;
+            let lastRow = array.length - 1;
+            let firstCol = 0;
+            let lastCol = array[0].length - 1
+            let answerArr = [];
+            
+                for (let i = firstCol; i <= lastCol; i++) {
+                answerArr.push(array[firstRow][i]);
+            }
+            firstRow++;
+            for (let i = firstRow; i <= lastRow; i++) {
+                answerArr.push(array[i][lastCol])
+            }
+            lastCol--;
+            for (let i = lastCol; i >= firstCol; i--) {
+                answerArr.push(array[lastRow][i]);
+            }
+            lastRow--;
+            for (let i = lastRow; i >= firstRow; i--) {
+                answerArr.push(array[i][firstCol])
+            }
+            firstCol++;
+            if (firstRow !== lastRow || firstCol !== lastCol) {
+                return traversePer(array)
+            } 
+            
+            return answerArr;
+            
+        }
       
