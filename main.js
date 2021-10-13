@@ -646,4 +646,13 @@ return this;
         if (root === null) return 0;
         return depth += nodeDepths(root.left, depth + 1) + nodeDepths(root.right, depth + 1);
     }
+
+    function inOrderTraverse(tree, array = []) {
+        if (tree !== null) {
+              inOrderTraverse(tree.left, array);
+              array.push(tree.value);
+              inOrderTraverse(tree.right, array);
+          }
+          return array;
+      }
       
